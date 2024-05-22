@@ -1,2 +1,2 @@
 # CODSOFT
-Codsoft Internships Projects
+Codsoft Internship Projects
