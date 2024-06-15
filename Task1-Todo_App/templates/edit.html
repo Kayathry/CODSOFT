@@ -1,10 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Edit {{todo.id}}</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
 </head>
 <body>
-$END$
+    <div style="margin-top: 50px;" class="ui container">
+    <div class="ui segment">
+<!--            <p class="ui big header">{{todo.id }} | {{ todo.title }}</p>-->
+            <form class="ui big header" action="/update/{{todo.id}}" method="post">
+                <p>{{todo.id}}</p>
+                <input type="text" name="title" value={{todo.title}} />
+                <input type="text" name="description" value={{todo.description}} />
+
+                <button class="ui blue button" type="submit">Update</button>
+            </form>
+
+        </div>
+    </div>
 </body>
 </html>
