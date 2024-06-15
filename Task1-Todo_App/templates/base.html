@@ -16,8 +16,9 @@
 
         <form class="ui form" action="/add" method="post">
             <div class="field">
-                <label>Todo Title</label>
-                <input type="text" name="title" placeholder="Enter Todo..."><br>
+                <label>Create Todo</label>
+                <input type="text" name="title" placeholder="Enter title..."><br>
+                <input type="text" name="description" placeholder="Enter description..."><br>
             </div>
             <button class="ui green button" type="submit">Add</button>
         </form>
@@ -28,14 +29,16 @@
         <div class="ui segment">
             <p class="ui big header">{{todo.id }} | {{ todo.title }}</p>
 
+            <p class="ui small header">{{todo.description }}</p>
+
             {% if todo.complete == False %}
-            <span class="ui gray label">Not Complete</span>
+            <a class="ui gray button" href="/change_complete_status/{{todo.id}}">Not Complete</a>
             {% else %}
-            <span class="ui green label">Completed</span>
+            <a class="ui green button" href="/change_complete_status/{{todo.id}}">Completed</a>
             {% endif %}
 
-            <a class="ui blue button" href="/update/{{ todo.id }}">Update</a>
-            <a class="ui red button" href="/delete/{{ todo.id }}">Delete</a>
+            <a class="ui blue button" href="/edit/{{todo.id}}">Edit</a>
+            <a class="ui red button" href="/delete/{{todo.id}}">Delete</a>
         </div>
         {% endfor %}
     </div>
